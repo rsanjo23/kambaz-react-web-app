@@ -1,0 +1,101 @@
+[
+    {
+        "_id": "A101",
+        "title": "Kambaz Web Application",
+        "description": "Develop a web application to mimic the behavior of Canvas",
+        "course": "RSJ101",
+        "available": "May 6 at 12:00am",
+        "availableDate": "2024-05-06",
+        "due": "May 13 at 11:59pm",
+        "dueDate": "2024-05-13",
+        "points": "100"
+    },
+    {
+        "_id": "A102",
+        "title": "Final Project",
+        "description": "Implement new functionality to your Kambaz",
+        "course": "RSJ101",
+        "available": "May 13 at 12:00am",
+        "availableDate": "2024-05-13",
+        "due": "May 20 at 11:59pm",
+        "dueDate": "2024-05-20",
+        "points": "150"
+    },
+    {
+        "_id": "A103",
+        "title": "Final Duel Form",
+        "description": "Fight Me",
+        "course": "RSJ101",
+        "available": "May 20 at 12:00am",
+        "availableDate": "2024-05-20",
+        "due": "May 27 at 11:59pm",
+        "dueDate": "2024-05-27",
+        "points": "200"
+    },
+    {
+        "_id": "A201",
+        "title": "Haki Analysis",
+        "description": "Measure the level of each of your haki's",
+        "course": "RSJ102",
+        "available": "May 6 at 12:00am",
+        "availableDate": "2024-05-06",
+        "due": "May 13 at 11:59pm",
+        "dueDate": "2024-05-13",
+        "points": "200"
+    },
+    {
+        "_id": "A202",
+        "title": "Devil Fruit Showcase",
+        "description": "Measure the capabilities of your devil fruit",
+        "course": "RSJ102",
+        "available": "May 13 at 12:00am",
+        "availableDate": "2024-05-13",
+        "due": "May 20 at 11:59pm",
+        "dueDate": "2024-05-20",
+        "points": "500"
+    },
+    {
+        "_id": "A203",
+        "title": "Final Bounty Summation",
+        "description": "Calculate how high your bounty is based on a multitude of factors",
+        "course": "RSJ102",
+        "available": "May 20 at 12:00am",
+        "availableDate": "2024-05-20",
+        "due": "May 27 at 11:59pm",
+        "dueDate": "2024-05-27",
+        "points": "3000000000"
+    },
+    {
+        "_id": "A301",
+        "title": "Abacus Labeling",
+        "description": "Label the parts of an abacus and how to use it",
+        "course": "RSJ103",
+        "available": "May 6 at 12:00am",
+        "availableDate": "2024-05-06",
+        "due": "May 13 at 11:59pm",
+        "dueDate": "2024-05-13",
+        "points": "100"
+    },
+    {
+        "_id": "A302",
+        "title": "Calulator Construct",
+        "description": "Build a TI-84",
+        "course": "RSJ103",
+        "available": "May 13 at 12:00am",
+        "availableDate": "2024-05-13",
+        "due": "May 20 at 11:59pm",
+        "dueDate": "2024-05-20",
+        "points": "100"
+    },
+    {
+        "_id": "A303",
+        "title": "1 + 1 - 1 * 1 / 1",
+        "description": "Solve",
+        "course": "RSJ103",
+        "available": "May 20 at 12:00am",
+        "availableDate": "2024-05-20",
+        "due": "May 27 at 11:59pm",
+        "dueDate": "2024-05-27",
+        "points": "100"
+    }
+]

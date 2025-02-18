@@ -1,0 +1,98 @@
+[
+    {
+        "_id": "RSJ101",
+        "name": "React JS",
+        "number": "CS1234",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Computer Science",
+        "credits": 4,
+        "description": "This course delves into how to develop web applications using React JS, as well as good practice for creating a satisfying user experience",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "reactjs.jpg"
+    },
+    {
+        "_id": "RSJ102",
+        "name": "Pirate History",
+        "number": "OP3020",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Pirating",
+        "credits": 4,
+        "description": "Wealth, fame, power. Gold Roger, the King of the Pirates, attained this and everything else the world had to offer, and his dying words drove countless men to the seas. 'You want my treasure? You can have it. I left everything I gathered together in one place, now you just have to find it'. These words lured men to the Grand Line in pursuit of dreams greater than they'd ever dared to imagine. This is the time known as the great pirate era.",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "onepiecelogo.jpg"
+    },
+    {
+        "_id": "RSJ103",
+        "name": "Calculating",
+        "number": "MATH5000",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Mathematics",
+        "credits": 4,
+        "description": "9+10",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "calculator.png"
+    },
+    {
+        "_id": "RSJ104",
+        "name": "Embedded SW",
+        "number": "CS1235",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Computer Science",
+        "credits": 4,
+        "description": "Big Robot Guy",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "embeddedsw.jpg"
+    },
+    {
+        "_id": "RSJ105",
+        "name": "Game Programming",
+        "number": "CS3540",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Computer Science",
+        "credits": 4,
+        "description": "Fortnite Ninja Fortnite Blevins",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "videogameprogramming.jpg"
+    },
+    {
+        "_id": "RSJ106",
+        "name": "Dr. Racket Supreme",
+        "number": "CS9999",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Computer Science",
+        "credits": 4,
+        "description": "Fear Me",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "drracketlogo.png"
+    },
+    {
+        "_id": "RSJ107",
+        "name": "Playlist Making",
+        "number": "MUS1000",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Music",
+        "credits": 4,
+        "description": "RNBeat",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "spotifylogo.png"
+    },
+    {
+        "_id": "RSJ108",
+        "name": "Hello World",
+        "number": "CS0001",
+        "startDate": "2025-01-10",
+        "endDate": "2025-05-15",
+        "department": "Computer Science",
+        "credits": 4,
+        "description": "Richard",
+        "author": "654f9ec2ea7ead465908d1e3",
+        "image": "helloworld.png"
+    }
+]

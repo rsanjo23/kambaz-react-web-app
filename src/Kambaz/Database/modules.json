@@ -1,0 +1,226 @@
+[
+    {
+        "_id": "M101",
+        "name": "Intro to Web Design",
+        "description": "Basic principles of designing web applications.",
+        "course": "RSJ101",
+        "lessons": [
+            {
+                "_id": "L101",
+                "name": "HTML",
+                "description": "Hypertext Markup Language.",
+                "module": "M101"
+            },
+            {
+                "_id": "L102",
+                "name": "React",
+                "description": "React.js.",
+                "module": "M101"
+            },
+            {
+                "_id": "L103",
+                "name": "Deploying",
+                "description": "How to deploy and share your site.",
+                "module": "M101"
+            }
+        ]
+    },
+    {
+        "_id": "M102",
+        "name": "UI/UX",
+        "description": "Creating a more visually appealing web application.",
+        "course": "RSJ101",
+        "lessons": [
+            {
+                "_id": "L201",
+                "name": "CSS",
+                "description": "Cascading Style Sheets.",
+                "module": "M102"
+            },
+            {
+                "_id": "L202",
+                "name": "JavaScript",
+                "description": "Creating dynamic web pages.",
+                "module": "M102"
+            },
+            {
+                "_id": "L203",
+                "name": "Visual Design",
+                "description": "Learn what makes a design appealing to users.",
+                "module": "M102"
+            }
+        ]
+    },
+    {
+        "_id": "M103",
+        "name": "Final Assessments",
+        "description": "Time to do everything.",
+        "course": "RSJ101",
+        "lessons": [
+            {
+                "_id": "L301",
+                "name": "Final Exam",
+                "description": "Cummulative examination.",
+                "module": "M103"
+            },
+            {
+                "_id": "L302",
+                "name": "Final Project",
+                "description": "Submit the project you have been working on for the semester.",
+                "module": "M103"
+            },
+            {
+                "_id": "L303",
+                "name": "Final Duel",
+                "description": "Defeat Me.",
+                "module": "M103"
+            }
+        ]
+    },
+    {
+        "_id": "M201",
+        "name": "Government History",
+        "description": "Learn about the history of the world.",
+        "course": "RSJ102",
+        "lessons": [
+            {
+                "_id": "L101",
+                "name": "Marines",
+                "description": "Learn what a marine is.",
+                "module": "M201"
+            },
+            {
+                "_id": "L102",
+                "name": "World Government",
+                "description": "Learn what the world government is comprised of.",
+                "module": "M201"
+            },
+            {
+                "_id": "L103",
+                "name": "Cipher Pols",
+                "description": "Learn about the secret agencies of the world government.",
+                "module": "M201"
+            },
+            {
+                "_id": "L104",
+                "name": "Seven Warlords",
+                "description": "Learn about the seven warlords of the sea.",
+                "module": "M201"
+            }
+        ]
+    },
+    {
+        "_id": "M202",
+        "name": "PIRAATESS",
+        "description": "Understanding subsonic and supersonic aerodynamic behaviors.",
+        "course": "RSJ102",
+        "lessons": [
+            {
+                "_id": "L201",
+                "name": "Pirates",
+                "description": "Learn what it means to be a pirate.",
+                "module": "M202"
+            },
+            {
+                "_id": "L202",
+                "name": "Emperors of the Sea",
+                "description": "Yonk history overview.",
+                "module": "M202"
+            },
+            {
+                "_id": "L203",
+                "name": "Gol D. Roger",
+                "description": "The Pirate King.",
+                "module": "M202"
+            }
+        ]
+    },
+    {
+        "_id": "M203",
+        "name": "Devil Fruits and Haki",
+        "description": "Study the powersystems of the world.",
+        "course": "RSJ102",
+        "lessons": [
+            {
+                "_id": "L301",
+                "name": "Devil Fruits",
+                "description": "Biology of Paramecia, Zoan, and Logia Devil Fruits.",
+                "module": "M203"
+            },
+            {
+                "_id": "L302",
+                "name": "Haki",
+                "description": "Applications of Observation, Armament, and Conqueror's Haki.",
+                "module": "M203"
+            }
+        ]
+    },
+    {
+        "_id": "M301",
+        "name": "Addition",
+        "description": "How addition works.",
+        "course": "RSJ103",
+        "lessons": [
+            {
+                "_id": "L101",
+                "name": "Commutative Property",
+                "description": "1 + 2 = 2 + 1.",
+                "module": "M301"
+            },
+            {
+                "_id": "L102",
+                "name": "Associative Property",
+                "description": "(1 + 2) + 3 = 1 + (2 + 3).",
+                "module": "M301"
+            }
+        ]
+    },
+    {
+        "_id": "M302",
+        "name": "Multiplication",
+        "description": "How multiplication works.",
+        "course": "RSJ103",
+        "lessons": [
+            {
+                "_id": "L201",
+                "name": "Commutative Property",
+                "description": "1 * 2 = 2 * 1.",
+                "module": "M302"
+            },
+            {
+                "_id": "L202",
+                "name": "Associative Property",
+                "description": "(1 * 2) * 3 = 1 * (2 * 3).",
+                "module": "M302"
+            }
+        ]
+    },
+    {
+        "_id": "M303",
+        "name": "Subtraction",
+        "description": "How subtraction works.",
+        "course": "RSJ103",
+        "lessons": [
+            {
+                "_id": "L301",
+                "name": "Negative number subtraction",
+                "description": "1 - -2 = 1 + 2.",
+                "module": "M303"
+            }
+        ]
+    },
+    {
+        "_id": "M304",
+        "name": "Division",
+        "description": "Overview of spacecraft systems and subsystems engineering.",
+        "course": "RSJ103",
+        "lessons": [
+            {
+                "_id": "L401",
+                "name": "DO NOT DO",
+                "description": "1 / 0",
+                "module": "M304"
+            }
+        ]
+    }
+]

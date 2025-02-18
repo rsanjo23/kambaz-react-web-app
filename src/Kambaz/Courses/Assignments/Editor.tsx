@@ -1,15 +1,19 @@
 import { Button, Col, Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap";
+import { useParams } from "react-router";
+import * as db from "../../Database";
 
 export default function AssignmentEditor() {
+  const { aid } = useParams();
+  const assignment = db.assignments.find((assignment) => assignment._id === aid);
   return (
     <div id="wd-assignments-editor">
       <FormGroup className="mb-3" controlId="wd-name">
         <FormLabel>Assignment Name</FormLabel>
-        <FormControl defaultValue="A1 - ENV + HTML" />
+        <FormControl defaultValue={assignment?.title} />
       </FormGroup>
       <FormGroup className="mb-3" controlId="wd-description">
         <FormControl as="textarea" rows={5}>
-          The assignment is available online Submit a link to the landing page of
+          {assignment?.description}
         </FormControl>
       </FormGroup>
       <Form.Group as={Row} className="mb-3" controlId="wd-points">
@@ -17,7 +21,7 @@ export default function AssignmentEditor() {
           Points
         </Form.Label>
         <Col sm={9}>
-          <Form.Control defaultValue={100} />
+          <Form.Control defaultValue={assignment?.points} />
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="wd-group">
@@ -78,19 +82,19 @@ export default function AssignmentEditor() {
           </FormGroup>
           <FormGroup className="mb-3" controlId="wd-due-date">
             <FormLabel className="fw-bold">Due</FormLabel>
-            <FormControl type="date" defaultValue="2024-05-13" />
+            <FormControl type="date" defaultValue={assignment?.dueDate} />
           </FormGroup>
           <FormGroup as={Row} className="mb-4" controlId="wd-availability">
             <Col>
               <FormGroup className="mb-3" controlId="wd-available-from">
                 <FormLabel className="fw-bold">Available From</FormLabel>
-                <FormControl type="date" defaultValue="2024-05-06" />
+                <FormControl type="date" defaultValue={assignment?.availableDate} />
               </FormGroup>
             </Col>
             <Col>
               <FormGroup className="mb-3" controlId="wd-available-until">
                 <FormLabel className="fw-bold">Until</FormLabel>
-                <FormControl type="date" defaultValue="2024-05-20" />
+                <FormControl type="date" defaultValue={assignment?.dueDate} />
               </FormGroup>
             </Col>
           </FormGroup>

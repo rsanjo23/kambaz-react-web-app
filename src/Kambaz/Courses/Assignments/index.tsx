@@ -6,8 +6,12 @@ import { Link } from "react-router";
 import { LuNotebookPen } from "react-icons/lu";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { IoEllipsisVertical } from "react-icons/io5";
+import { useParams } from "react-router";
+import * as db from "../../Database";
 
 export default function Assignments() {
+  const { cid } = useParams();
+  const assignments = db.assignments;
   return (
     <div>
       <FormGroup as={Row} className="me-1">
@@ -45,66 +49,30 @@ export default function Assignments() {
             </div>
           </div>
           <ListGroup className="wd-assignment rounded-0">
-            <ListGroup.Item className="wd-lesson p-3 ps-1">
-              <BsGripVertical className="me-2 fs-3" />
-              <LuNotebookPen color="green" className="me-2 fs-3" />
-              <Button className="text-dark bg-white border-white wd-assignment-text-button">
-                <Link to="/Kambaz/Courses/1234/Assignments/123"
-                  className="wd-assignment-link text-decoration-none text-dark fw-bold"
-                  style={{ fontSize: 25 }}>
-                  A1 - ENV + HTML
-                </Link>
-                <div>
-                  <p className="text-left">
-                    <span className="text-danger fw-bold">Multiple Modules </span>
-                    | <b>Not available until</b> May 6 at 12:00am |
-                    <br />
-                    <b>Due</b> May 13 at 11:59pm | 100pts
-                  </p>
-                </div>
-              </Button>
-              <LessonControlButtons />
-            </ListGroup.Item>
-            <ListGroup.Item className="wd-lesson p-3 ps-1">
-              <BsGripVertical className="me-2 fs-3" />
-              <LuNotebookPen color="green" className="me-2 fs-3" />
-              <Button className="text-dark bg-white border-white wd-assignment-text-button">
-                <Link to="/Kambaz/Courses/1234/Assignments/123"
-                  className="wd-assignment-link text-decoration-none text-dark fw-bold"
-                  style={{ fontSize: 25 }}>
-                  A2 - CSS + BOOTSTRAP
-                </Link>
-                <div>
-                  <p className="text-left">
-                    <span className="text-danger fw-bold">Multiple Modules </span>
-                    | <b>Not available until</b> May 13 at 12:00am |
-                    <br />
-                    <b>Due</b> May 20 at 11:59pm | 100pts
-                  </p>
-                </div>
-              </Button>
-              <LessonControlButtons />
-            </ListGroup.Item>
-            <ListGroup.Item className="wd-lesson p-3 ps-1">
-              <BsGripVertical className="me-2 fs-3" />
-              <LuNotebookPen color="green" className="me-2 fs-3" />
-              <Button className="text-dark bg-white border-white wd-assignment-text-button">
-                <Link to="/Kambaz/Courses/1234/Assignments/123"
-                  className="wd-assignment-link text-decoration-none text-dark fw-bold"
-                  style={{ fontSize: 25 }}>
-                  A3 - JAVASCRIPT + REACT
-                </Link>
-                <div>
-                  <p className="text-left">
-                    <span className="text-danger fw-bold">Multiple Modules </span>
-                    | <b>Not available until</b> May 20 at 12:00am |
-                    <br />
-                    <b>Due</b> May 27 at 11:59pm | 100pts
-                  </p>
-                </div>
-              </Button>
-              <LessonControlButtons />
-            </ListGroup.Item>
+            {assignments.filter((assignment: any) => assignment.course === cid)
+              .map((assignment: any) => (
+                <ListGroup.Item className="wd-lesson p-3 ps-1">
+                  <BsGripVertical className="me-2 fs-3" />
+                  <LuNotebookPen color="green" className="me-2 fs-3" />
+                  <Button className="text-dark bg-white border-white wd-assignment-text-button">
+                    <Link key={`/Kambaz/Courses/${cid}/Assignments/${assignment._id}`}
+                      to={`/Kambaz/Courses/${cid}/Assignments/${assignment._id}`}
+                      className="wd-assignment-link text-decoration-none text-dark fw-bold"
+                      style={{ fontSize: 25 }}>
+                      {assignment.title}
+                    </Link>
+                    <div>
+                      <p className="text-left">
+                        <span className="text-danger fw-bold">Multiple Modules </span>
+                        | <b>Not available until</b> {assignment.available} |
+                        <br />
+                        <b>Due</b> {assignment.due} | {assignment.points}pts
+                      </p>
+                    </div>
+                  </Button>
+                  <LessonControlButtons />
+                </ListGroup.Item>
+              ))}
           </ListGroup>
         </ListGroup.Item>
       </ListGroup>
