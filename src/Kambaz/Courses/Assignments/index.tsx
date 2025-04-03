@@ -7,14 +7,21 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { useParams } from "react-router";
 import AssignmentControlButtons from "./AssignmentControlButtons";
-import { deleteAssignment } from "./reducer";
+import { setAssignments, deleteAssignment } from "./reducer";
 import { useDispatch, useSelector } from "react-redux";
+import * as coursesClient from "../client";
+import * as assignmentsClient from "./client";
+import { useEffect } from "react";
 
 export default function Assignments() {
   const { cid } = useParams();
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const removeAssignment = async (assignmentId: string) => {
+    await assignmentsClient.deleteAssignment(assignmentId);
+    dispatch(deleteAssignment(assignmentId));
+  };
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   function formatDate(dateString: string): string {
     const date = new Date(dateString + "T12:00:00");
@@ -32,6 +39,13 @@ export default function Assignments() {
     const pathTo = `/Kambaz/Courses/${cid}/Assignments/${aid}`;
     navigate(pathTo);
   }
+  const fetchAssignments = async () => {
+    const assignments = await coursesClient.findAssignmentsForCourse(cid as string);
+    dispatch(setAssignments(assignments));
+  };
+  useEffect(() => {
+    fetchAssignments();
+  }, []);
   return (
     <div>
       <FormGroup as={Row} className="me-1">
@@ -72,7 +86,7 @@ export default function Assignments() {
             </div>
           </div>
           <ListGroup className="wd-assignment rounded-0">
-            {assignments.filter((assignment: any) => assignment.course === cid)
+            {assignments
               .map((assignment: any) => (
                 <ListGroup.Item className="wd-lesson p-3 ps-1">
                   <BsGripVertical className="me-2 fs-3" />
@@ -99,7 +113,7 @@ export default function Assignments() {
                   <AssignmentControlButtons
                     assignmentId={assignment._id}
                     deleteAssignment={(assignmentId) => {
-                      dispatch(deleteAssignment(assignmentId));
+                      removeAssignment(assignmentId);
                     }} />
                 </ListGroup.Item>
               ))}

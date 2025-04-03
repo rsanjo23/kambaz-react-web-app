@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router";
 import { addAssignment, updateAssignment, } from "./reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import * as coursesClient from "../client";
+import * as assignmentsClient from "./client";
 
 export default function AssignmentEditor() {
   const { cid, aid } = useParams();
@@ -24,11 +26,15 @@ export default function AssignmentEditor() {
     const pathBack = `/Kambaz/Courses/${cid}/Assignments/`;
     navigate(pathBack);
   }
-  const addOrUpdate = () => {
+  const addOrUpdate = async () => {
     if (assignment) {
+      await assignmentsClient.updateAssignment(assignmentData);
       dispatch(updateAssignment(assignmentData));
     }
     else {
+      if (!cid) return;
+      const newAssignment = { ...assignmentData, course: cid };
+      await coursesClient.createAssignmentForCourse(cid, newAssignment);
       dispatch(addAssignment(assignmentData));
     }
     routeBack();
