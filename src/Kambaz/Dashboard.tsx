@@ -7,10 +7,12 @@ import * as coursesClient from "./Courses/client";
 import * as enrollmentsClient from "./client";
 
 export default function Dashboard({ courses, course, setCourse, addNewCourse,
-    deleteCourse, updateCourse, fetchCourses }: {
+    deleteCourse, updateCourse, fetchCourses, enrolling, setEnrolling, updateEnrollment }: {
         courses: any[]; course: any; setCourse: (course: any) => void;
         addNewCourse: () => void; deleteCourse: (course: any) => void;
         updateCourse: () => void; fetchCourses: () => void;
+        enrolling: boolean; setEnrolling: (enrolling: boolean) => void;
+        updateEnrollment: (courseId: string, enrolled: boolean) => void;
     }) {
     const [allCourses, setAllCourses] = useState<any[]>([]);
     const [showEnrollments, setShowEnrollments] = useState(false);
@@ -55,7 +57,11 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
     }, []);
     return (
         <div id="wd-dashboard">
-            <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
+            <h1 id="wd-dashboard-title">Dashboard
+                <button onClick={() => setEnrolling(!enrolling)} className="float-end btn btn-primary" >
+                    {enrolling ? "My Courses" : "All Courses"}
+                </button>
+            </h1> <hr />
             {
                 currentUser.role === "FACULTY" &&
                 <div>
@@ -89,7 +95,7 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
             <h2 id="wd-dashboard-published">Published Courses ({allCourses.length})</h2> <hr />
             <div id="wd-dashboard-courses">
                 <Row xs={1} md={5} className="g-4">
-                    {(!showEnrollments ? courses : allCourses)
+                    {courses
                         .map((course: any) => (
                             <Col className="wd-dashboard-course" style={{ width: "300px" }}>
                                 <Card>
@@ -102,6 +108,15 @@ export default function Dashboard({ courses, course, setCourse, addNewCourse,
                                         <Card.Img src={`/images/${course.image}`} variant="top" width="100%" height={160} />
                                         <Card.Body className="card-body">
                                             <Card.Title className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                                                {enrolling && (
+                                                    <button onClick={(event) => {
+                                                        event.preventDefault();
+                                                        updateEnrollment(course._id, !course.enrolled);
+                                                    }}
+                                                        className={`btn ${course.enrolled ? "btn-danger" : "btn-success"} float-end`} >
+                                                        {course.enrolled ? "Unenroll" : "Enroll"}
+                                                    </button>
+                                                )}
                                                 {course.name} </Card.Title>
                                             <Card.Text className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
                                                 {course.description} </Card.Text>
