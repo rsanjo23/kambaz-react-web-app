@@ -32,9 +32,8 @@ export default function AssignmentEditor() {
       dispatch(updateAssignment(assignmentData));
     }
     else {
-      if (!cid) return;
       const newAssignment = { ...assignmentData, course: cid };
-      await coursesClient.createAssignmentForCourse(cid, newAssignment);
+      await coursesClient.createAssignmentForCourse(cid!, newAssignment);
       dispatch(addAssignment(assignmentData));
     }
     routeBack();

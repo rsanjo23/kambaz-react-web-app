@@ -18,7 +18,7 @@ export default function Assignments() {
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const removeAssignment = async (assignmentId: string) => {
+  const deleteAssignmentHandler = async (assignmentId: string) => {
     await assignmentsClient.deleteAssignment(assignmentId);
     dispatch(deleteAssignment(assignmentId));
   };
@@ -39,13 +39,13 @@ export default function Assignments() {
     const pathTo = `/Kambaz/Courses/${cid}/Assignments/${aid}`;
     navigate(pathTo);
   }
-  const fetchAssignments = async () => {
-    const assignments = await coursesClient.findAssignmentsForCourse(cid as string);
+  const fetchAssignmentsForCourse = async () => {
+    const assignments = await coursesClient.findAssignmentsForCourse(cid!);
     dispatch(setAssignments(assignments));
   };
   useEffect(() => {
-    fetchAssignments();
-  }, []);
+    fetchAssignmentsForCourse();
+  }, [cid]);
   return (
     <div>
       <FormGroup as={Row} className="me-1">
@@ -113,7 +113,7 @@ export default function Assignments() {
                   <AssignmentControlButtons
                     assignmentId={assignment._id}
                     deleteAssignment={(assignmentId) => {
-                      removeAssignment(assignmentId);
+                      deleteAssignmentHandler(assignmentId);
                     }} />
                 </ListGroup.Item>
               ))}
